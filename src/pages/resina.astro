@@ -1,256 +1,244 @@
 ---
 import '../styles/global.css';
 
-// Variables para personalizar rápido tu curso
-const nombreCurso = "Máster en Pestañas Pelo a Pelo";
-const precioNormal = "$100";
-const precioDescuento = "$49.99";
-const linkHotmart = "https://go.hotmart.com/F106210282M?ap=8b35"; // <-- Cambia esto por tu HotLink
+const nombreCurso = "Diseña y Crea con Resina";
+const precioNormal = "$/ 74";
+const precioDescuento = "$/ 30";
+const linkHotmart = "https://go.hotmart.com/F106210282M?ap=8b35";
 
-// src/pages/resina.astro
-const title = "Diseña y Crea con Resina | NeoCampus";
-const description = "Descubre cómo crear accesorios únicos en resina desde cero. Acceso de por vida, soporte continuo y certificado incluido.";
+const title = "Diseña y Crea con Resina | Emprende desde Casa";
+const description = "Aprende a crear accesorios en resina y empieza a generar ingresos desde casa. Curso completo con 19 módulos, acceso de por vida y soporte continuo.";
 ---
 
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body class="bg-white text-gray-900 font-sans antialiased">
 
-    <section class="relative bg-white pt-20 pb-24 overflow-hidden border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-semibold mb-6">
-                    <span>⭐⭐⭐⭐⭐</span>
-                    <span>Evaluado con 5.0 por nuestros alumnos</span>
-                </div>
-                <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-                    DISEÑA Y CREA CON <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">RESINA</span>
-                </h1>
-                <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                    ¿Alguna vez has soñado con crear accesorios únicos que reflejen tu estilo personal? ¡Ahora es el momento de hacerlo realidad! Desbloquea tu creatividad y crea de manera fácil y dinámica tus propios accesorios en resina.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#oferta" class="px-8 py-4 text-lg font-bold rounded-xl text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg shadow-green-500/30 transition-all transform hover:scale-105">
-                        ¡Quiero Inscribirme Ahora!
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- HERO SECTION -->
-    <!-- ... (tu código del hero que termina con </section>) ... -->
+    <!-- ░░ BARRA DE URGENCIA ░░ -->
+    <div class="bg-amber-500 text-white text-center py-2.5 px-4 text-sm font-semibold sticky top-0 z-50">
+        <span>🔥 Oferta especial: 60% OFF — solo por tiempo limitado</span>
+        <span id="countdown" class="ml-3 font-bold bg-white/20 rounded px-2 py-0.5"></span>
+    </div>
 
-<section class="bg-gray-50 py-12 -mt-8 relative z-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-2 sm:p-4 shadow-2xl border border-gray-100 transform transition-all hover:scale-[1.01]">
-                <div class="rounded-2xl overflow-hidden relative bg-black aspect-video flex items-center justify-center">
-                    
-                    <iframe 
-                        class="w-full h-full object-cover" 
-                        src="https://www.youtube.com/embed/MTWwIt6Z4oY?rel=0" 
-                        title="Diseña y Crea con Resina" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+    <section class="bg-white pt-8 pb-12 md:pt-16 md:pb-20 border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
-                </div>
-                <div class="text-center mt-4 pb-2">
-                    <p class="text-gray-500 font-medium text-sm flex items-center justify-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        Dale play para conocer a tu instructora
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERÍA DE CREACIONES (Doble Slider Corregido) -->
-    <section class="py-12 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900">Mira lo que serás capaz de crear ✨</h2>
-        </div>
-
-        <div class="relative w-full flex flex-col gap-6 overflow-x-hidden group pb-4">
-            <!-- Gradientes laterales -->
-            <div class="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-
-            <!-- Fila 1: Movimiento a la izquierda -->
-            <div class="flex overflow-hidden w-full">
-                <div class="flex w-max animate-marquee gap-4 px-2">
-                    <!-- Set 1 -->
-                    { [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                        </div>
-                    ))}
-                    <!-- Set 2 (Copia exacta para el bucle infinito) -->
-                    { [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <!-- Fila 2: Movimiento a la derecha -->
-            <div class="flex overflow-hidden w-full">
-                <div class="flex w-max animate-marquee-reverse gap-4 px-2">
-                    <!-- Set 1 -->
-                    { [9, 10, 11, 12, 13, 14, 15, 8].map((num) => (
-                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                        </div>
-                    ))}
-                    <!-- Set 2 (Copia exacta para el bucle infinito) -->
-                    { [9, 10, 11, 12, 13, 14, 15, 8].map((num) => (
-                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFICIOS RÁPIDOS -->
-    <!-- ... (aquí empieza la sección oscura de bg-gray-900) ... -->
-    <section class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4">
-                    <div class="text-3xl mb-3">🎓</div>
-                    <h3 class="font-bold text-lg mb-2">Aprende desde cero</h3>
-                    <p class="text-gray-400 text-sm">Paso a paso hasta volverte un experto.</p>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl mb-3">🌐</div>
-                    <h3 class="font-bold text-lg mb-2">Acceso de por vida</h3>
-                    <p class="text-gray-400 text-sm">Aprende a tu ritmo, donde y cuando quieras.</p>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl mb-3">🤝</div>
-                    <h3 class="font-bold text-lg mb-2">Acompañamiento</h3>
-                    <p class="text-gray-400 text-sm">Soporte continuo para resolver todas tus dudas.</p>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl mb-3">🛍️</div>
-                    <h3 class="font-bold text-lg mb-2">Proveedores Exclusivos</h3>
-                    <p class="text-gray-400 text-sm">Lista secreta para comprar tus materiales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">¿Qué aprenderás? 🤔</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">No solo adquirirás habilidades técnicas, sino que descubrirás los secretos para diseñar piezas únicas y altamente rentables.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-                
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-1.webp" alt="Llaveros y Lapiceros" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Llaveros y Lapiceros</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-2.webp" alt="Agendas y Marcalibros" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Agendas y Marcalibros</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-3.webp" alt="Joyería Fina" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Joyería Fina</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-4.webp" alt="Fundas para Celular" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Fundas para Celular</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-5.webp" alt="Plaquitas para Mascotas" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Plaquitas para Mascotas</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-6.webp" alt="Cuadros y Relojes" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Cuadros y Relojes</span>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center">
-                    <img src="/aprende-7.webp" alt="Lámparas y Tazas" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-full shadow-sm mb-3 sm:mb-4 border-2 border-white" />
-                    <span class="text-sm sm:text-lg font-semibold text-gray-800 leading-tight">Lámparas y Tazas</span>
-                </div>
-
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 sm:p-6 text-center shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 border border-purple-100 flex flex-col items-center justify-center">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full bg-white shadow-sm mb-3 sm:mb-4 border-2 border-pink-100">
-                        <span class="text-2xl sm:text-3xl">✨</span>
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs md:text-sm font-semibold mb-5 md:mb-6 border border-green-200">
+                        ⭐⭐⭐⭐⭐ &nbsp;+800 alumnas empezaron su negocio
                     </div>
-                    <span class="text-sm sm:text-lg font-bold text-purple-700 leading-tight">Y mucho más...</span>
+
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 mb-4 md:mb-5 leading-tight">
+                        Convierte la resina en tu<br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                            fuente de ingresos desde casa
+                        </span>
+                    </h1>
+
+                    <p class="text-base md:text-lg text-gray-500 mb-6 leading-relaxed">
+                        Sin experiencia previa. Sin horarios fijos. Sin invertir una fortuna.<br class="hidden md:block" />
+                        Solo tus manos, la resina y el método paso a paso que ya usaron cientos de emprendedoras.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-8 text-xs md:text-sm text-gray-600 font-medium">
+                        <span class="bg-green-50 text-green-800 border border-green-200 rounded-lg px-2.5 py-1">✅ Acceso de por vida</span>
+                        <span class="bg-green-50 text-green-800 border border-green-200 rounded-lg px-2.5 py-1">✅ 19 módulos prácticos</span>
+                        <span class="bg-green-50 text-green-800 border border-green-200 rounded-lg px-2.5 py-1">✅ Garantía de 7 días</span>
+                    </div>
+
+                    <a href={linkHotmart} class="block w-full md:inline-block md:w-auto px-8 py-4 text-center text-lg font-bold rounded-xl text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg shadow-green-500/30 transition-all transform hover:scale-105">
+                        Quiero empezar hoy →
+                    </a>
+                    <p class="text-xs text-gray-400 mt-3 text-center md:text-left">Pago único · Acceso inmediato · Hotmart 100% seguro</p>
+                </div>
+
+                <div class="relative mt-4 md:mt-0">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/5] w-full max-h-[450px] md:max-h-none mx-auto">
+                        <img
+                            src="/instructora.webp"
+                            alt="Instructora del curso Diseña y Crea con Resina"
+                            class="w-full h-full object-cover object-top"
+                            loading="eager"
+                        />
+                    </div>
+
+                    <div class="absolute -bottom-3 -left-2 md:-bottom-4 md:-left-4 bg-white border border-gray-200 rounded-xl px-3 py-2 md:px-4 md:py-3 shadow-md flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-bottom-left">
+                        <span class="text-xl md:text-2xl">🛡️</span>
+                        <div>
+                            <p class="text-xs md:text-sm font-bold text-gray-900 leading-none mb-0.5">Garantía 7 días</p>
+                            <p class="text-[10px] md:text-xs text-gray-500">Devolución íntegra</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute -top-3 -right-2 md:-top-4 md:-right-4 bg-white border border-gray-200 rounded-xl px-3 py-2 md:px-4 md:py-3 shadow-md flex items-center gap-2 md:gap-3 scale-90 md:scale-100 origin-top-right">
+                        <span class="text-xl md:text-2xl">👩‍🎨</span>
+                        <div>
+                            <p class="text-xs md:text-sm font-bold text-gray-900 leading-none mb-0.5">+800 alumnas</p>
+                            <p class="text-[10px] md:text-xs text-gray-500">ya están creando</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░ PARA QUIÉN ES ░░ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-4">¿Esto es para ti?</h2>
+            <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">Si te identificas con alguna de estas situaciones, el curso fue diseñado exactamente para ti.</p>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+                {[
+                    { emoji: "💸", text: "Quieres generar un ingreso extra sin salir de casa" },
+                    { emoji: "👩‍💼", text: "Sueñas con tener tu propio negocio y ser tu propia jefa" },
+                    { emoji: "😟", text: "Sientes que el tiempo libre no te está generando nada" },
+                    { emoji: "🎨", text: "Te gustan las manualidades pero nunca lo convertiste en dinero" },
+                    { emoji: "🌐", text: "Quieres vender online pero no sabes por dónde empezar" },
+                    { emoji: "⏰", text: "Buscas algo flexible que se adapte a tus horarios" },
+                ].map(item => (
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50 border border-purple-100">
+                        <span class="text-xl mt-0.5">{item.emoji}</span>
+                        <p class="text-gray-700 font-medium text-sm leading-snug">{item.text}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+<!-- ░░ QUÉ APRENDERÁS ░░ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">¿Qué aprenderás? 🤔</h2>
+                <p class="text-gray-500 max-w-xl mx-auto text-lg">Productos con alta demanda y márgenes atractivos que podrás vender desde el primer mes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                {[
+                    { img: "/aprende-1.webp", label: "Llaveros y Lapiceros" },
+                    { img: "/aprende-2.webp", label: "Agendas y Marcalibros" },
+                    { img: "/aprende-3.webp", label: "Joyería Fina" },
+                    { img: "/aprende-4.webp", label: "Fundas para Celular" },
+                    { img: "/aprende-5.webp", label: "Plaquitas para Mascotas" },
+                    { img: "/aprende-6.webp", label: "Cuadros y Relojes" },
+                    { img: "/aprende-7.webp", label: "Lámparas y Tazas" },
+                ].map(item => (
+                    <div class="bg-gray-50 rounded-2xl p-5 sm:p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center justify-center group">
+                        {/* Imágenes considerablemente más grandes con un borde más notorio */}
+                        <img 
+                            src={item.img} 
+                            alt={item.label} 
+                            class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full shadow-md mb-4 border-4 border-white group-hover:scale-105 transition-transform duration-300" 
+                            loading="lazy" 
+                        />
+                        <span class="text-base sm:text-lg font-bold text-gray-800 leading-tight">{item.label}</span>
+                    </div>
+                ))}
+                
+                {/* Tarjeta de "Y mucho más..." ajustada a las nuevas dimensiones */}
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 sm:p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-purple-100 flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center rounded-full bg-white shadow-md mb-4 border-4 border-pink-100">
+                        <span class="text-4xl sm:text-5xl drop-shadow-sm">✨</span>
+                    </div>
+                    <span class="text-base sm:text-lg font-extrabold text-purple-700 leading-tight">Y mucho más...</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">Programa Completo del Curso</h2>
+<!-- ░░ BENEFICIOS CLAVE DE TU EMPRENDIMIENTO ░░ -->
+    <section class="bg-gray-900 text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto">
             
+            {/* Contenedor central con borde amarillo y fondo claro para resaltar los elementos */}
+            <div class="bg-white p-8 md:p-14 rounded-3xl border-2 border-yellow-400 shadow-2xl">
+                
+                {/* Título de la sección */}
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-950">Transforma tu Talento en un Negocio</h2>
+                
+                {/* Grid de 3 columnas */}
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center items-start">
+                    {[
+                        // 1. Emoji de Altos Ingresos
+                        { 
+                            icon: "💰", 
+                            title: "Genera Altos Ingresos", 
+                            sub: "Emprende tu propio negocio y desarrolla tu propia marca de accesorios con resina." 
+                        },
+                        // 2. Emoji de Productos de Tendencia (Joya/Brillo)
+                        { 
+                            icon: "💎", 
+                            title: "Crea Tendencia", 
+                            sub: "Diseña accesorios de resina de calidad que te permitan destacar y diferenciarte." 
+                        },
+                        // 3. Emoji de Materiales (Mezcla/Química)
+                        { 
+                            icon: "🧪", 
+                            title: "Domina Materiales", 
+                            sub: "Conoce los materiales de calidad y que estén a tu alcance con bajo presupuesto." 
+                        },
+                    ].map(b => (
+                        <div class="p-4 flex flex-col items-center">
+                            {/* Emoji grande con sombra para reemplazar la imagen visualmente */}
+                            <div class="text-7xl mb-6 drop-shadow-md">{b.icon}</div>
+                            
+                            {/* Títulos claros y subtítulos legibles */}
+                            <h3 class="font-bold text-xl mb-3 text-gray-950">{b.title}</h3>
+                            <p class="text-gray-800 text-sm leading-relaxed max-w-sm mx-auto">{b.sub}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░ PROGRAMA DEL CURSO ░░ -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-10">Contenido del curso</h2>
+
             <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                 <ul class="divide-y divide-gray-100">
                     { [
-                        "Módulo 1: Bienvenida",
-                        "Módulo 2: Medidas, Herramientas, Materiales y Proveedores",
-                        "Módulo 3: Conociendo la Resina y los Pigmentos",
-                        "Módulo 4: Lo que necesitas saber sobre los moldes",
-                        "Módulo 5: Teoría sobre la Resina Epoxica",
-                        "Módulo 6: Problemas Frecuentes al trabajar con resina y sus soluciones",
-                        "Módulo 7: Empezamos la práctica - Joyería en Resina",
-                        "Módulo 8: Llaveros en Resina",
-                        "Módulo 9: Lapiceros, agenda y marcapáginas",
-                        "Módulo 10: Artículos Personales",
-                        "Módulo 11: Accesorios para celular, placas para mascotas y porta vasos",
-                        "Módulo 12: Cómo sacar los costos y empezar a crear tu marca",
-                        "Módulo 13: Personalización, Despedida"
+                        "Bienvenida",
+                        "Medidas, Herramientas, Materiales y Proveedores",
+                        "Conociendo la Resina y los Pigmentos",
+                        "Lo que necesitas saber sobre los moldes",
+                        "Teoría sobre la Resina Epóxica",
+                        "Problemas Frecuentes y sus soluciones",
+                        "Práctica: Joyería en Resina",
+                        "Llaveros en Resina",
+                        "Lapiceros, agenda y marcapáginas",
+                        "Artículos Personales",
+                        "Accesorios para celular, placas y porta vasos",
+                        "Cómo sacar costos y crear tu marca",
+                        "Personalización y Despedida",
                     ].map((modulo, index) => (
-                        <li class="p-5 flex items-center hover:bg-gray-50 transition-colors">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm mr-4">{index + 1}</span>
-                            <span class="text-gray-800 font-medium">{modulo}</span>
+                        <li class="p-4 flex items-center gap-3 hover:bg-gray-50 transition-colors">
+                            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs">{index + 1}</span>
+                            <span class="text-gray-700 text-sm font-medium">{modulo}</span>
                         </li>
                     ))}
                 </ul>
             </div>
-
-            <div class="mt-12 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-pink-500 rounded-full blur-3xl opacity-50"></div>
-                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">🎁 Bonos Especiales de Acción Rápida</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> Módulo 14: Bonos Especiales Generales</li>
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> Módulo 15: Clases Especiales</li>
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> Módulo 16: Llaveros Inteligentes</li>
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> Módulo 17: Adornos Navideños</li>
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> Módulo 18: Joyería con Orquídeas Naturales</li>
-                    <li class="flex items-center gap-3"><span class="text-green-400">✓</span> MÓDULO 19: Repetición de Asesorías en vivo</li>
-                </ul>
-            </div>
+           
         </div>
     </section>
 
-    <section class="py-24 bg-white overflow-hidden border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Lo que dicen nuestras alumnas 💬</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Únete a cientos de emprendedoras que ya perdieron el miedo y están creando piezas increíbles.</p>
+    <!-- ░░ TESTIMONIOS ░░ -->
+    <section class="py-20 bg-white overflow-hidden border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-3">Lo que dicen nuestras alumnas 💬</h2>
+            <p class="text-gray-500 max-w-xl mx-auto text-sm">Cientos de emprendedoras que hoy venden y generan ingresos desde casa.</p>
         </div>
 
         <div class="relative w-full flex overflow-x-hidden group pb-4">
@@ -259,149 +247,324 @@ const description = "Descubre cómo crear accesorios únicos en resina desde cer
 
             <div class="flex animate-marquee group-hover:pause whitespace-nowrap">
                 { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                    <div class="w-72 sm:w-80 flex-shrink-0 mx-4 rounded-2xl overflow-hidden shadow-md border border-gray-100 transition-transform transform hover:scale-105">
-                        <img 
-                            src={`/comentario-${num}.webp`} 
-                            alt={`Testimonio ${num}`} 
-                            class="w-full h-auto object-cover pointer-events-none" 
-                        
-                        />
+                    <div class="w-64 sm:w-72 flex-shrink-0 mx-3 rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-transform transform hover:scale-105">
+                        <img src={`/comentario-${num}.webp`} alt={`Testimonio ${num}`} class="w-full h-auto object-cover pointer-events-none" loading="lazy" />
                     </div>
                 ))}
             </div>
             <div class="flex animate-marquee group-hover:pause whitespace-nowrap" aria-hidden="true">
                 { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                    <div class="w-72 sm:w-80 flex-shrink-0 mx-4 rounded-2xl overflow-hidden shadow-md border border-gray-100 transition-transform transform hover:scale-105">
-                        <img 
-                            src={`/comentario-${num}.webp`} 
-                            alt={`Testimonio ${num}`} 
-                            class="w-full h-auto object-cover pointer-events-none" 
-                             
-                        />
+                    <div class="w-64 sm:w-72 flex-shrink-0 mx-3 rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-transform transform hover:scale-105">
+                        <img src={`/comentario-${num}.webp`} alt={`Testimonio ${num}`} class="w-full h-auto object-cover pointer-events-none" loading="lazy" />
                     </div>
                 ))}
             </div>
         </div>
     </section>
 
-   <!-- ESTILOS DE LA ANIMACIÓN (Actualizados) -->
-    <style>
-        /* Animación hacia la izquierda */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 40s linear infinite;
-        }
-        
-        /* Animación hacia la derecha */
-        @keyframes marquee-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-        }
-        .animate-marquee-reverse {
-            animation: marquee-reverse 45s linear infinite;
-        }
+    <!-- ░░ BLOQUE DE PRECIO + GARANTÍA ░░ -->
+    <section id="oferta" class="py-20 bg-gray-50">
+        <div class="max-w-md mx-auto px-4 sm:px-6">
 
-        /* Pausa la animación cuando el usuario pone el mouse encima */
-        .group:hover .animate-marquee,
-        .group:hover .animate-marquee-reverse {
-            animation-play-state: paused;
-        }
-    </style>
-
-    <section id="oferta" class="py-24 bg-white">
-        <div class="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden transform transition-all hover:-translate-y-1">
-                <div class="p-8 text-center bg-gray-50 border-b border-gray-100">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Acceso Completo</h2>
-                    <p class="text-gray-500 text-sm">Único pago, acceso de por vida</p>
+            <!-- Garantía visible ANTES del precio -->
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full text-green-700 text-sm font-semibold">
+                    🛡️ Garantía de devolución de 7 días — sin preguntas
                 </div>
-                <div class="p-8">
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-gray-600"><span class="mr-3 text-green-500 font-bold">✓</span> Los 19 Módulos del Curso</li>
-                        <li class="flex items-center text-gray-600"><span class="mr-3 text-green-500 font-bold">✓</span> Comunidad Privada de Alumnos</li>
-                        <li class="flex items-center text-gray-600"><span class="mr-3 text-green-500 font-bold">✓</span> Certificado Digital de Conclusión</li>
-                        <li class="flex items-center text-gray-600"><span class="mr-3 text-green-500 font-bold">✓</span> Actualizaciones Futuras Gratis</li>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+
+                <!-- Header precio -->
+                <div class="p-7 text-center bg-gradient-to-br from-purple-600 to-pink-500 text-white">
+                    <p class="text-sm font-semibold uppercase tracking-widest opacity-80 mb-2">Acceso completo · Pago único</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <span class="text-lg line-through opacity-60">{precioNormal}</span>
+                        <span class="text-5xl font-extrabold">{precioDescuento}</span>
+                    </div>
+                    <p class="text-xs opacity-70 mt-2">Precio aumenta pronto</p>
+                </div>
+
+                <!-- Qué incluye -->
+                <div class="p-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Todo lo que recibes:</p>
+                    <ul class="space-y-3 mb-7 text-sm text-gray-600">
+                        {[
+                            "19 Módulos completos en video",
+                            "Comunidad privada de alumnas",
+                            "Certificado digital de conclusión",
+                            "Lista exclusiva de proveedores",
+                            "Actualizaciones futuras gratis",
+                            "Asesorías en vivo grabadas",
+                        ].map(item => (
+                            <li class="flex items-center gap-3">
+                                <span class="text-green-500 font-bold text-base">✓</span>
+                                {item}
+                            </li>
+                        ))}
                     </ul>
-                    <a href="https://go.hotmart.com/F106210282M?ap=8b35" class="block w-full py-4 px-6 text-center rounded-xl text-white font-bold text-xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg shadow-green-500/30 transition-all">
-                        Comprar Ahora
+
+                    <a href={linkHotmart} class="block w-full py-4 px-6 text-center rounded-xl text-white font-bold text-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-lg shadow-green-500/30 transition-all transform hover:scale-105">
+                        Quiero empezar hoy →
                     </a>
-                    <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        Pago 100% seguro procesado por Hotmart
+
+                    <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Pago seguro procesado por Hotmart
+                    </p>
+                </div>
+            </div>
+
+            <!-- Urgencia visual debajo del precio -->
+            <p class="text-center text-xs text-gray-400 mt-4">⚡ Quedan pocas plazas al precio de lanzamiento</p>
+        </div>
+    </section>
+
+
+    <!-- ░░ SECCIÓN DE GARANTÍA ░░ -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            
+            {/* Contenedor principal estilo "Certificado" */}
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                
+                {/* Columna Izquierda: Sello de Garantía con fondo distintivo */}
+                <div class="w-full md:w-2/5 bg-gradient-to-br from-yellow-50 via-white to-orange-50 p-10 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                    <div class="relative">
+                        {/* Efecto de resplandor (Glow) detrás del sello */}
+                        <div class="absolute inset-0 bg-yellow-400 blur-3xl opacity-20 rounded-full"></div>
+                        
+                        {/* Sello de Garantía. Asegúrate de usar una imagen con fondo transparente (.png o .webp) */}
+                        <img 
+                            src="garantia.webp" 
+                            alt="Sello de Garantía de 7 Días" 
+                            class="relative w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500" 
+                            loading="lazy"
+                        />
                     </div>
                 </div>
+
+                {/* Columna Derecha: Texto persuasivo modernizado */}
+                <div class="w-full md:w-3/5 p-8 md:p-14 flex flex-col justify-center">
+                    
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                        ¡El riesgo es <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">100% mío!</span>
+                    </h2>
+                    
+                    <h3 class="text-lg font-bold text-gray-500 uppercase tracking-wide mb-6">
+                        Garantía Incondicional de 7 Días
+                    </h3>
+                    
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-base md:text-lg mb-8">
+                        <p>
+                            No quiero que tomes una decisión definitiva hoy. Quiero que tomes una decisión informada.
+                        </p>
+                        <p>
+                            Entra al programa, evalúa el contenido y comprueba lo valioso que es el método. Si luego de revisar todo no estás 100% satisfecha, <strong>tienes 7 días para solicitar la devolución íntegra de tu dinero.</strong>
+                        </p>
+                    </div>
+
+                    {/* Viñetas para resumir los beneficios y dar tranquilidad */}
+                    <ul class="space-y-3 bg-gray-50 p-5 rounded-xl border border-gray-100">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700 font-medium">Revisa todo el contenido sin compromiso.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700 font-medium">Devolución rápida, sin hacerte preguntas.</span>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-10">Preguntas Frecuentes</h2>
-            <div class="space-y-4">
+    <!-- ░░ SECCIÓN DE CERTIFICADO ░░ -->
+    <section class="py-20 md:py-28 bg-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            
+            {/* Textos y Encabezado */}
+            <div class="mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                    Al finalizar el curso podrás solicitar tu <br class="hidden sm:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Certificado de Participación</span> 🎓
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg">
+                    Un documento que avalará tus nuevos conocimientos y te dará el respaldo necesario para transmitir mayor confianza y profesionalismo a tus futuros clientes.
+                </p>
+            </div>
+
+            {/* Contenedor interactivo de la Imagen del Certificado */}
+            <div class="relative mx-auto w-full max-w-4xl group perspective">
                 
-                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-gray-900">
-                        <h2 class="font-medium">¿Quién evaluó DISEÑA Y CREA CON RESINA?</h2>
-                        <span class="relative h-5 w-5 shrink-0">
-                            <svg class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                            <svg class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
-                        </span>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600 leading-relaxed">
-                        Todas las evaluaciones han sido realizadas por personas reales que han comprado el curso. La nota media es el resultado de estas evaluaciones, que va de 1 a 5 estrellas.
-                    </p>
-                </details>
+                {/* Efecto de resplandor (glow) de fondo para resaltar la imagen */}
+                <div class="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700"></div>
+                
+                {/* Marco blanco estilo "cuadro" para la imagen */}
+                <div class="relative bg-white rounded-2xl md:rounded-3xl p-2 sm:p-3 shadow-2xl ring-1 ring-gray-900/5 transition-transform duration-700 transform group-hover:-translate-y-2">
+                    
+                    {/* La imagen del usuario */}
+                    <img 
+                        src="/certificado.webp" 
+                        alt="Certificado de Finalización del Curso de Resina" 
+                        width="1820"
+                        height="905"
+                        class="w-full h-auto rounded-xl border border-gray-100 object-cover"
+                        loading="lazy"
+                    />
+                    
+                </div>
+            </div>
 
-                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-gray-900">
-                        <h2 class="font-medium">¿Cómo funciona el “Plazo de Garantía”?</h2>
-                        <span class="relative h-5 w-5 shrink-0">
-                            <svg class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                            <svg class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
-                        </span>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600 leading-relaxed">
-                        Es el período que tienes para pedir el reembolso integral del valor que pagaste si el producto no te satisface. Hotmart procesa el reembolso automáticamente en hasta 5 días.
-                    </p>
-                </details>
+        </div>
+    </section>
 
-                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-gray-900">
-                        <h2 class="font-medium">¿Qué es y cómo funciona el Certificado?</h2>
-                        <span class="relative h-5 w-5 shrink-0">
-                            <svg class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                            <svg class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
-                        </span>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600 leading-relaxed">
-                        Al finalizar todas las clases, podrás emitir tu certificado digital de conclusión directamente desde la plataforma. Es ideal para compartir en redes como LinkedIn.
-                    </p>
-                </details>
-
-                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-gray-900">
-                        <h2 class="font-medium">¿Cómo accedo a mi producto?</h2>
-                        <span class="relative h-5 w-5 shrink-0">
-                            <svg class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                            <svg class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
-                        </span>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600 leading-relaxed">
-                        Inmediatamente después de tu compra, recibirás un email de Hotmart con tus credenciales de acceso para entrar a la plataforma y empezar a ver las clases desde cualquier dispositivo.
-                    </p>
-                </details>
-
+    <!-- ░░ PREGUNTAS FRECUENTES ░░ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-10">Preguntas frecuentes</h2>
+            <div class="space-y-3">
+                {[
+                    {
+                        q: "¿Necesito experiencia previa?",
+                        a: "Para nada. El curso empieza desde cero y te guía paso a paso. Solo necesitas ganas de aprender."
+                    },
+                    {
+                        q: "¿Qué materiales necesito para empezar?",
+                        a: "Lo básico: resina epóxica, pigmentos y moldes. En el Módulo 2 tienes la lista exacta con precios y proveedores."
+                    },
+                    {
+                        q: "¿En cuánto tiempo podría empezar a vender?",
+                        a: "Alumnas con dedicación consistente han vendido sus primeras piezas en las primeras semanas. El Módulo 12 te enseña cómo fijar precios y crear tu marca."
+                    },
+                    {
+                        q: "¿Cómo funciona la garantía?",
+                        a: "Tienes 7 días desde la compra para pedir el reembolso completo si el curso no te satisface. Hotmart lo procesa automáticamente, sin preguntas."
+                    },
+                    {
+                        q: "¿Cómo accedo al curso?",
+                        a: "Inmediatamente después de tu compra recibirás un email de Hotmart con tus accesos. Puedes ver las clases desde cualquier dispositivo, cuando quieras."
+                    },
+                    {
+                        q: "¿Las evaluaciones son reales?",
+                        a: "Sí. Las 5 estrellas provienen de alumnas reales que compraron el curso. La nota es el promedio de sus evaluaciones en la plataforma de Hotmart."
+                    },
+                ].map(item => (
+                    <details class="group bg-gray-50 rounded-xl border border-gray-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex cursor-pointer items-center justify-between gap-2 p-5 text-gray-900">
+                            <span class="font-medium text-sm">{item.q}</span>
+                            <span class="relative h-5 w-5 shrink-0 text-gray-400">
+                                <svg class="absolute inset-0 h-5 w-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                                <svg class="absolute inset-0 h-5 w-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
+                            </span>
+                        </summary>
+                        <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                    </details>
+                ))}
             </div>
         </div>
     </section>
 
+    <!-- ░░ CTA FINAL ░░ -->
+    <section class="py-20 bg-gradient-to-br from-purple-600 to-pink-500 text-white text-center">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-extrabold mb-4">Tu negocio empieza hoy.</h2>
+            <p class="text-white/80 mb-8 text-lg">Cada día que esperas es un día que otra emprendedora ya está vendiendo.</p>
+            <a href={linkHotmart} class="inline-block px-10 py-4 text-lg font-bold rounded-xl bg-white text-purple-700 hover:bg-purple-50 shadow-xl transition-all transform hover:scale-105">
+                Quiero empezar hoy →
+            </a>
+            <p class="text-white/60 text-xs mt-4">Garantía de 7 días · Acceso inmediato · Pago único</p>
+        </div>
+    </section>
+
+    <!-- ░░ FOOTER ░░ -->
     <footer class="bg-gray-900 py-8 text-center">
         <p class="text-gray-500 text-sm">© {new Date().getFullYear()} NeoCampus.tech. Todos los derechos reservados.</p>
         <p class="text-gray-600 text-xs mt-2 max-w-2xl mx-auto px-4">Este sitio no es parte del sitio web de Meta o Meta Platforms Inc. Además, este sitio NO está respaldado por Meta de ninguna manera. META es una marca comercial de META PLATFORMS, Inc.</p>
     </footer>
 
+    <!-- ░░ ESTILOS ░░ -->
+    <style>
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-reverse {
+            0%   { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee         { animation: marquee 40s linear infinite; }
+        .animate-marquee-reverse { animation: marquee-reverse 45s linear infinite; }
+        .group:hover .animate-marquee,
+        .group:hover .animate-marquee-reverse { animation-play-state: paused; }
+    </style>
+
+    <!-- ░░ COUNTDOWN SCRIPT ░░ -->
+    <script>
+        (function() {
+            var KEY = 'resina_deadline';
+            var stored = localStorage.getItem(KEY);
+            var deadline;
+            if (stored) {
+                deadline = new Date(parseInt(stored));
+            } else {
+                deadline = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24h
+                localStorage.setItem(KEY, deadline.getTime().toString());
+            }
+
+            function tick() {
+                var diff = deadline - Date.now();
+                if (diff <= 0) {
+                    document.getElementById('countdown').textContent = '¡Oferta expirada!';
+                    return;
+                }
+                var h = Math.floor(diff / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var s = Math.floor((diff % 60000) / 1000);
+                document.getElementById('countdown').textContent =
+                    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
+
 </body>
 </html>
+
+<script>
+        (function() {
+            const KEY = 'resina_deadline';
+            const stored = localStorage.getItem(KEY);
+            
+            // Le decimos explícitamente que es una Fecha (Date) para quitar los primeros 2 errores
+            let deadline = stored ? new Date(parseInt(stored)) : new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+            if (!stored) {
+                localStorage.setItem(KEY, deadline.getTime().toString());
+            }
+
+            function tick() {
+                // Buscamos el elemento en el HTML
+                const countdownEl = document.getElementById('countdown');
+                
+                // Si el elemento no existe en esta página, detenemos la función (Esto quita los otros 2 errores)
+                if (!countdownEl) return;
+
+                const diff = deadline.getTime() - Date.now();
+                if (diff <= 0) {
+                    countdownEl.textContent = '¡Oferta expirada!';
+                    return;
+                }
+                const h = Math.floor(diff / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                countdownEl.textContent =
+                    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>

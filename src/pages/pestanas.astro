@@ -533,3 +533,38 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
 
 </body>
 </html>
+
+<script>
+        (function() {
+            const KEY = 'resina_deadline';
+            const stored = localStorage.getItem(KEY);
+            
+            // Le decimos explícitamente que es una Fecha (Date) para quitar los primeros 2 errores
+            let deadline = stored ? new Date(parseInt(stored)) : new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+            if (!stored) {
+                localStorage.setItem(KEY, deadline.getTime().toString());
+            }
+
+            function tick() {
+                // Buscamos el elemento en el HTML
+                const countdownEl = document.getElementById('countdown');
+                
+                // Si el elemento no existe en esta página, detenemos la función (Esto quita los otros 2 errores)
+                if (!countdownEl) return;
+
+                const diff = deadline.getTime() - Date.now();
+                if (diff <= 0) {
+                    countdownEl.textContent = '¡Oferta expirada!';
+                    return;
+                }
+                const h = Math.floor(diff / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                countdownEl.textContent =
+                    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
