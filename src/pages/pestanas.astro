@@ -20,8 +20,8 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
-    <!-- ░░ BARRA DE URGENCIA ░░ -->
-    <div class="bg-amber-500 text-white text-center py-2.5 px-4 text-sm font-semibold sticky top-0 z-50">
+   <!-- ░░ BARRA DE URGENCIA ░░ -->
+    <div id="urgency-bar" class="bg-amber-500 text-white text-center py-2.5 px-4 text-sm font-semibold sticky top-0 z-50 transition-transform duration-300 ease-in-out transform translate-y-0 w-full">
         <span>🔥 Oferta especial: 60% OFF — solo por tiempo limitado</span>
         <span id="countdown" class="ml-3 font-bold bg-white/20 rounded px-2 py-0.5"></span>
     </div>
@@ -86,6 +86,55 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE CREACIONES (Doble Slider Corregido) -->
+    <section class="py-12 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900">Mira lo que serás capaz de crear ✨</h2>
+        </div>
+
+        <div class="relative w-full flex flex-col gap-6 overflow-x-hidden group pb-4">
+            <!-- Gradientes laterales -->
+            <div class="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Fila 1: Movimiento a la izquierda -->
+            <div class="flex overflow-hidden w-full">
+                <div class="flex w-max animate-marquee gap-4 px-2">
+                    <!-- Set 1 -->
+                    { [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                    ))}
+                    <!-- Set 2 (Copia exacta para el bucle infinito) -->
+                    { [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Fila 2: Movimiento a la derecha -->
+            <div class="flex overflow-hidden w-full">
+                <div class="flex w-max animate-marquee-reverse gap-4 px-2">
+                    <!-- Set 1 -->
+                    { [9, 10, 11, 12, 13, 14, 15, 8].map((num) => (
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                    ))}
+                    <!-- Set 2 (Copia exacta para el bucle infinito) -->
+                    { [9, 10, 11, 12, 13, 14, 15, 8].map((num) => (
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                            <img src={`/creacion-${num}.webp`} alt={`Accesorio en resina ${num}`} class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
@@ -485,7 +534,6 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
         <p class="text-gray-600 text-xs mt-2 max-w-2xl mx-auto px-4">Este sitio no es parte del sitio web de Meta o Meta Platforms Inc. Además, este sitio NO está respaldado por Meta de ninguna manera. META es una marca comercial de META PLATFORMS, Inc.</p>
     </footer>
 
-    <!-- ░░ ESTILOS ░░ -->
     <style>
         @keyframes marquee {
             0%   { transform: translateX(0); }
@@ -501,45 +549,14 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
         .group:hover .animate-marquee-reverse { animation-play-state: paused; }
     </style>
 
-    <!-- ░░ COUNTDOWN SCRIPT ░░ -->
     <script>
         (function() {
-            var KEY = 'resina_deadline';
-            var stored = localStorage.getItem(KEY);
-            var deadline;
-            if (stored) {
-                deadline = new Date(parseInt(stored));
-            } else {
-                deadline = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24h
-                localStorage.setItem(KEY, deadline.getTime().toString());
-            }
-
-            function tick() {
-                var diff = deadline - Date.now();
-                if (diff <= 0) {
-                    document.getElementById('countdown').textContent = '¡Oferta expirada!';
-                    return;
-                }
-                var h = Math.floor(diff / 3600000);
-                var m = Math.floor((diff % 3600000) / 60000);
-                var s = Math.floor((diff % 60000) / 1000);
-                document.getElementById('countdown').textContent =
-                    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-            }
-            tick();
-            setInterval(tick, 1000);
-        })();
-    </script>
-
-</body>
-</html>
-
-<script>
-        (function() {
+            // ==========================================
+            // 1. LÓGICA DEL CONTADOR DE OFERTA
+            // ==========================================
             const KEY = 'resina_deadline';
             const stored = localStorage.getItem(KEY);
             
-            // Le decimos explícitamente que es una Fecha (Date) para quitar los primeros 2 errores
             let deadline = stored ? new Date(parseInt(stored)) : new Date(Date.now() + 24 * 60 * 60 * 1000);
 
             if (!stored) {
@@ -547,10 +564,8 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
             }
 
             function tick() {
-                // Buscamos el elemento en el HTML
                 const countdownEl = document.getElementById('countdown');
                 
-                // Si el elemento no existe en esta página, detenemos la función (Esto quita los otros 2 errores)
                 if (!countdownEl) return;
 
                 const diff = deadline.getTime() - Date.now();
@@ -561,10 +576,37 @@ const description = "Aprende a crear accesorios en resina y empieza a generar in
                 const h = Math.floor(diff / 3600000);
                 const m = Math.floor((diff % 3600000) / 60000);
                 const s = Math.floor((diff % 60000) / 1000);
-                countdownEl.textContent =
-                    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+                countdownEl.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
             }
             tick();
             setInterval(tick, 1000);
+
+            // ==========================================
+            // 2. LÓGICA DE LA BARRA QUE SE OCULTA (MÓVIL)
+            // ==========================================
+            let lastScrollTop = 0;
+            const urgencyBar = document.getElementById('urgency-bar');
+            
+            if (urgencyBar) {
+                window.addEventListener('scroll', function() {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (window.innerWidth < 768) {
+                        if (scrollTop > lastScrollTop && scrollTop > 60) {
+                            urgencyBar.style.transform = 'translateY(-100%)';
+                        } else {
+                            urgencyBar.style.transform = 'translateY(0)';
+                        }
+                    } else {
+                        urgencyBar.style.transform = 'translateY(0)';
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+                }, { passive: true });
+            }
         })();
     </script>
+
+</body>
+</html>
+
+   
